@@ -7,7 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { PAGES_ROUTES } from './pages.routes';
 import { IncreaserComponent } from '../components/increaser/increaser.component';
-
+import { ChartsModule } from 'ng2-charts';
+import { DonutchartComponent } from '../components/donutchart/donutchart.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { IncreaserComponent } from '../components/increaser/increaser.component'
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
-        IncreaserComponent
+        IncreaserComponent,
+        DonutchartComponent
     ],
     exports: [
         DashboardComponent,
@@ -26,7 +28,8 @@ import { IncreaserComponent } from '../components/increaser/increaser.component'
     imports: [
         SharedModule,
         PAGES_ROUTES,
-        FormsModule
+        FormsModule,
+        ChartsModule
     ]
 })
 

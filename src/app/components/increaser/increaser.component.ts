@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-increaser',
@@ -6,6 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./increaser.component.css']
 })
 export class IncreaserComponent implements OnInit {
+
+  @ViewChild('txt_progress') txt_progress: ElementRef;
 
   @Input() progress: number = 50;
   @Input('name') description: string = 'description';
@@ -21,14 +23,28 @@ export class IncreaserComponent implements OnInit {
     console.log('Description: ', this.description);
   }
 
+  onChanges(newValue: number) {
+
+    if (newValue >= 100) {
+      this.progress = 100;
+    } else if (newValue <= 0) {
+      this.progress = 0;
+    } else {
+      this.progress = newValue;
+    }
+
+    this.txt_progress.nativeElement.value = this.progress;
+    this.changeValue.emit(this.progress);
+  }
+
   updateProgress( value: number ) {
     if ( (value > 0) && (this.progress < 100) ) {
       this.progress = this.progress + value;
-      this.changeValue.emit(this.progress);
     } else if ( (value < 0) && (this.progress > 0) ) {
       this.progress = this.progress + value;
-      this.changeValue.emit(this.progress);
     }
+    this.changeValue.emit(this.progress);
+    this.txt_progress.nativeElement.focus();
   }
 
 }
