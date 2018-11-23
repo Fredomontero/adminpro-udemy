@@ -9,6 +9,7 @@ import { PAGES_ROUTES } from './pages.routes';
 import { IncreaserComponent } from '../components/increaser/increaser.component';
 import { ChartsModule } from 'ng2-charts';
 import { DonutchartComponent } from '../components/donutchart/donutchart.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DonutchartComponent } from '../components/donutchart/donutchart.compone
         ProgressComponent,
         Graficas1Component,
         IncreaserComponent,
-        DonutchartComponent
+        DonutchartComponent,
+        AccountSettingsComponent
     ],
     exports: [
         DashboardComponent,
