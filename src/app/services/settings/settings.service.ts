@@ -22,10 +22,7 @@ export class SettingsService {
   loadSettings() {
     if ( localStorage.getItem('settings')) {
       this.settings = JSON.parse(localStorage.getItem('settings'));
-      console.log('Loading settings from local storage');
       this.setTheme( this.settings.theme );
-    } else {
-      console.log('Using default values');
     }
   }
 

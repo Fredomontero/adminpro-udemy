@@ -11,7 +11,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { FormsModule } from '@angular/forms';
-import { SettingsService } from './services/settings.service';
+import { SettingsService } from './services/settings/settings.service';
+
+
+//Servicios
+import { ServiceModule } from './services/service.module';
 
 
 
@@ -26,7 +30,8 @@ import { SettingsService } from './services/settings.service';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [
     SettingsService
