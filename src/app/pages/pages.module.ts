@@ -10,6 +10,7 @@ import { IncreaserComponent } from '../components/increaser/increaser.component'
 import { ChartsModule } from 'ng2-charts';
 import { DonutchartComponent } from '../components/donutchart/donutchart.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         Graficas1Component,
         IncreaserComponent,
         DonutchartComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromesasComponent
     ],
     exports: [
         DashboardComponent,
